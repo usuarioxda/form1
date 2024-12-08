@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #8B7E9B;
+  --color-secondary: #C5B3CD;
+  --color-background: #F3E9F6;
+  --color-text: #2D283E;
+  --gradient-primary: linear-gradient(135deg, #8B7E9B 0%, #C5B3CD 100%);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+@layer base {
+  select, input[type='text'], input[type='number'], textarea {
+    @apply block w-full rounded-xl border-secondary bg-white/80 shadow-sm 
+    focus:border-primary focus:ring-primary transition-all duration-200;
+  }
+  
+  button {
+    @apply rounded-xl px-6 py-3 text-sm font-medium shadow-sm
+    focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-200;
+  }
+
+  .section-card {
+    @apply bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg p-8 
+    border border-secondary/20 transition-all duration-200 hover:shadow-xl;
+  }
+
+  .nav-button {
+    @apply px-4 py-2 text-sm font-medium rounded-xl transition-all duration-200
+    hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary/50;
+  }
+
+  .nav-button-active {
+    @apply bg-gradient-to-r from-primary to-secondary text-white
+    shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
+  }
+}
